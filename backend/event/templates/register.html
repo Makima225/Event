@@ -1,0 +1,87 @@
+<!-- templates/register.html -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Register Participant</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      .form-container {
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+      }
+
+      .form-input {
+        width: 100%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+        font-size: 16px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header
+      class="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 h-14 text-center"
+    >
+      <h1 class="text-4xl text-white font-bold">
+        Inscrivez vous pour participer !
+      </h1>
+    </header>
+    <div>
+      <h2 class="text-center text-2xl font-semibold mt-6">
+        Entrez vos informations ici
+      </h2>
+    </div>
+    <div class="flex justify-center mt-6">
+      <div class="form-container bg-white p-6 rounded-lg">
+        <form method="post" class="space-y-4">
+          {% csrf_token %}
+          <input
+            type="text"
+            name="name"
+            class="form-input"
+            placeholder="Nom"
+            required
+          />
+          <input
+            type="text"
+            name="surname"
+            class="form-input"
+            placeholder="Prenom"
+            required
+          />
+          <input
+            type="text"
+            name="residence"
+            class="form-input"
+            placeholder="Lieu de residence"
+            required
+          />
+          <input
+            type="email"
+            name="email"
+            class="form-input"
+            placeholder="Email"
+            required
+          />
+          <input
+            type="text"
+            name="phone"
+            class="form-input"
+            placeholder="Numero de telephone"
+            required
+          />
+          <button
+            class="w-full bg-indigo-500 hover:bg-indigo-600 text-white font-bold py-2 px-4 rounded"
+            type="submit"
+          >
+            Register
+          </button>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
